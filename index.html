@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="회로와 전자기학을 코드로 탐구하는 전기공학 학부생의 프로젝트 포트폴리오.">
+  <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e1014" media="(prefers-color-scheme: dark)">
+  <title>Volt Note | 전기공학 포트폴리오</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2311141a'/%3E%3Cpath d='M6 22c4 0 5-12 10-12s6 12 10 12' fill='none' stroke='%23c6f24e' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="./style.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="./profile.js" defer></script>
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 이동</a>
+
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="포트폴리오 처음으로">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M6 22c4 0 5-12 10-12s6 12 10 12"/></svg></span>
+        <span class="brand-name" data-profile-name>Volt Note</span>
+      </a>
+      <nav aria-label="주요 메뉴">
+        <a href="#about">소개</a><a href="#skills">기술</a><a href="#projects">프로젝트</a><a href="#contact">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero wrap" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Electrical Engineering · Student Portfolio</p>
+        <h1 id="hero-title">회로를 만들고,<br>보이지 않는 장을<br><em>이해하는 과정.</em></h1>
+        <p class="intro">전기공학을 공부하며 회로와 전자기학의 개념을 직접 조작하고 관찰할 수 있는 도구로 연결합니다.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">프로젝트 살펴보기 <span aria-hidden="true">→</span></a>
+          <a class="button ghost" href="#about">소개 읽기</a>
+        </div>
+        <ul class="hero-tags" aria-label="관심 분야">
+          <li>회로 해석</li><li>벡터장 시각화</li><li>학습 도구</li>
+        </ul>
+      </div>
+
+      <figure class="scope" aria-labelledby="chart-title">
+        <div class="scope-head">
+          <span class="mono">FIELD NOTE / 01</span>
+          <span class="mono scope-read" id="scope-read" aria-hidden="true">t = 1.00τ</span>
+        </div>
+        <div class="scope-screen">
+          <svg viewBox="0 0 480 300" role="img" aria-labelledby="chart-title chart-desc" id="scope-svg">
+            <title id="chart-title">RC 충전의 이론적 응답</title>
+            <desc id="chart-desc">정규화된 시간 0부터 5 타우까지 커패시터 전압은 1에 접근하고 전류는 0에 접근한다. 실행 화면이 아닌 이론 설명용 도식이다.</desc>
+            <defs>
+              <pattern id="grid-minor" width="16" height="11" patternUnits="userSpaceOnUse" x="48" y="40"><path d="M16 0H0V11" fill="none" class="g-minor"/></pattern>
+              <pattern id="grid-major" width="80" height="55" patternUnits="userSpaceOnUse" x="48" y="40"><path d="M80 0H0V55" fill="none" class="g-major"/></pattern>
+              <filter id="glow" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <rect x="48" y="40" width="400" height="220" fill="url(#grid-minor)"/>
+            <rect x="48" y="40" width="400" height="220" fill="url(#grid-major)"/>
+            <path d="M48 36V260H452" class="axis" fill="none"/>
+            <g class="tick">
+              <text x="40" y="44" text-anchor="end">1.0</text>
+              <text x="40" y="264" text-anchor="end">0</text>
+              <text x="48" y="282" text-anchor="middle">0</text>
+              <text x="128" y="282" text-anchor="middle">τ</text>
+              <text x="208" y="282" text-anchor="middle">2τ</text>
+              <text x="288" y="282" text-anchor="middle">3τ</text>
+              <text x="368" y="282" text-anchor="middle">4τ</text>
+              <text x="448" y="282" text-anchor="middle">5τ</text>
+              <text x="48" y="22">NORMALIZED RESPONSE</text>
+            </g>
+            <path id="voltage-curve" d="M48 260" class="trace v" filter="url(#glow)"/>
+            <path id="current-curve" d="M48 40" class="trace i" filter="url(#glow)"/>
+            <g id="cursor">
+              <line id="cursor-line" x1="128" y1="40" x2="128" y2="260" class="cursor-line"/>
+              <circle id="cursor-v" cx="128" cy="120.96" r="4.5" class="dot-v"/>
+              <circle id="cursor-i" cx="128" cy="179.04" r="4.5" class="dot-i"/>
+              <text id="cursor-label" x="138" y="112" class="cursor-label">63.2%</text>
+            </g>
+            <rect id="scope-hit" x="48" y="30" width="400" height="240" fill="transparent"/>
+          </svg>
+        </div>
+        <div class="scope-legend">
+          <span><i class="sw v"></i>전압 · 1 − e<sup>−t/τ</sup> <b class="mono" id="read-v">63.2%</b></span>
+          <span><i class="sw i"></i>전류 · e<sup>−t/τ</sup> <b class="mono" id="read-i">36.8%</b></span>
+        </div>
+        <figcaption>
+          <span class="mono kr">τ = RC · 이론 설명용 도식</span>
+          <span class="scope-hint">그래프 위를 움직여 값을 읽어 보세요.</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="wrap split">
+        <div class="split-head reveal">
+          <p class="label"><span class="mono">01</span>About</p>
+          <h2 id="about-title">답을 구하는 것에서<br>이유를 이해하는 것으로.</h2>
+        </div>
+        <div class="about-copy reveal">
+          <p class="lead">관심 분야는 <strong>회로 해석</strong>과 <strong>전자기학 시각화</strong>입니다. 값을 바꿨을 때 전압·전류·벡터장이 어떻게 달라지는지 직접 확인하는 학습 환경을 만들고 있습니다.</p>
+          <p>결과만 나열하기보다 문제 정의, 구현 과정, 확인한 범위와 남은 한계를 함께 기록합니다.</p>
+          <aside class="callout">
+            <span class="mono callout-tag">NOTE</span>
+            <p>개인 프로젝트에서는 AI 도구를 활용했습니다. 직접 정의한 요구와 AI 보조 구현·검토를 구분해 소개합니다.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="label"><span class="mono">02</span>Toolkit</p>
+            <h2 id="skills-title">프로젝트에서 사용한 도구</h2>
+          </div>
+          <p class="section-sub">숙련도 점수 대신 사용 맥락을 기록합니다.</p>
+        </div>
+        <div class="skills">
+          <article class="skill reveal">
+            <div class="skill-top"><h3>Web</h3><span class="mono skill-no">01</span></div>
+            <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <p>회로 편집 화면과 반응형 패널, 페이저·측정 결과를 보여 주는 인터페이스.</p>
+          </article>
+          <article class="skill reveal">
+            <div class="skill-top"><h3>Simulation</h3><span class="mono skill-no">02</span></div>
+            <ul class="chips"><li>WebGL</li><li>Web Worker</li></ul>
+            <p>전자기학 3D 표시와 브라우저 계산 작업의 분리. 실제 기기별 확인은 진행 과제.</p>
+          </article>
+          <article class="skill reveal">
+            <div class="skill-top"><h3>Workflow</h3><span class="mono skill-no">03</span></div>
+            <ul class="chips"><li>Git</li><li>Node.js</li><li>AI 보조 개발</li></ul>
+            <p>소스 이력, 관련 시험, 변경 문서와 검토 결과를 연결한 개발 과정.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="label"><span class="mono">03</span>Selected Work</p>
+            <h2 id="projects-title">만들며 배우는 프로젝트</h2>
+          </div>
+          <p class="section-sub">하나의 Circuit Lab, 세 가지 탐구 영역.</p>
+        </div>
+
+        <article class="featured reveal">
+          <div class="featured-body">
+            <div class="featured-meta">
+              <span class="mono">01 / MAIN PROJECT</span>
+              <span class="badge">개인 학습 프로젝트</span>
+            </div>
+            <h3>Circuit Lab</h3>
+            <p class="project-lead">직접 회로를 그리고, 전압과 전류를 관찰하는 브라우저 실험실.</p>
+            <dl class="facts">
+              <div><dt>문제</dt><dd>회로 수식과 파형을 별개로 공부할 때 생기는 이해의 간격.</dd></div>
+              <div><dt>역할</dt><dd>학습 요구와 조작 개선 방향 제시, 결과 확인. AI 보조로 설계·구현·검토 진행.</dd></div>
+            </dl>
+          </div>
+          <div class="featured-side">
+            <p class="mono kr side-title">구현된 해석 기능</p>
+            <ul class="feature-list">
+              <li>DC 해석</li><li>시간응답</li><li>AC 해석</li><li>종속원</li><li>이상 OP AMP</li><li>DC 테브난·노턴</li><li>계산 취소</li>
+            </ul>
+            <details>
+              <summary>구현 범위와 한계 보기<span class="plus" aria-hidden="true"></span></summary>
+              <div class="detail-body">
+                <p>CIRCUIT-024 기준 마지막 시간 구간 적분과 지수·SI 접두어 변환을 보완했습니다. 기능별 수용 범위와 시험 기록을 구분해 관리했습니다.</p>
+                <p>전체 시험 통과나 실제 회로의 모든 동작을 보장하지 않습니다. 실제형 OP AMP, AC 포트 확장, 일부 모바일 조작은 완료 기능으로 소개하지 않습니다.</p>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <div class="modules">
+          <article class="module reveal">
+            <div class="module-art" aria-hidden="true">
+              <svg viewBox="0 0 200 120">
+                <line x1="20" y1="60" x2="180" y2="60" class="art-axis"/>
+                <line x1="100" y1="10" x2="100" y2="110" class="art-axis"/>
+                <circle cx="100" cy="60" r="44" class="art-ring"/>
+                <line x1="100" y1="60" x2="133.7" y2="33" class="art-vec a"/>
+                <line x1="100" y1="60" x2="139.5" y2="74.4" class="art-vec b"/>
+                <circle cx="133.7" cy="33" r="3.5" class="art-tip a"/>
+                <circle cx="139.5" cy="74.4" r="3.5" class="art-tip b"/>
+              </svg>
+            </div>
+            <div class="module-body">
+              <div class="featured-meta"><span class="mono">02 / MODULE</span><span class="status done">구현</span></div>
+              <h3>페이저 학습</h3>
+              <p class="project-lead">복소수 표현을 파형과 연결하다.</p>
+              <dl class="facts compact">
+                <div><dt>문제</dt><dd>직교형·극형과 전압·전류 위상차의 관계를 직관적으로 이해하기 어려움.</dd></div>
+                <div><dt>과정</dt><dd>복소평면, peak/RMS, 두 프로브 위상차와 복소수 연습을 학습 흐름으로 연결.</dd></div>
+                <div><dt>확인 범위</dt><dd>학습 패널과 연산 기능 구현. 크기 0의 위상은 미정으로 구분.</dd></div>
+              </dl>
+              <p class="module-tag mono kr">복소수 / AC / 시각화</p>
+            </div>
+          </article>
+
+          <article class="module reveal">
+            <div class="module-art" aria-hidden="true">
+              <svg viewBox="0 0 200 120">
+                <g class="art-field">
+                  <path d="M62 60H138"/>
+                  <path d="M62 60Q100 36 138 60"/><path d="M62 60Q100 84 138 60"/>
+                  <path d="M62 60Q100 12 138 60"/><path d="M62 60Q100 108 138 60"/>
+                  <path d="M62 60C70 -6 130 -6 138 60"/><path d="M62 60C70 126 130 126 138 60"/>
+                  <path d="M62 60L22 60"/><path d="M62 60L32 30"/><path d="M62 60L32 90"/>
+                  <path d="M138 60L178 60"/><path d="M138 60L168 30"/><path d="M138 60L168 90"/>
+                </g>
+                <circle cx="62" cy="60" r="11" class="art-charge pos"/><text x="62" y="64.5" class="art-sign">+</text>
+                <circle cx="138" cy="60" r="11" class="art-charge neg"/><text x="138" y="64.5" class="art-sign">−</text>
+              </svg>
+            </div>
+            <div class="module-body">
+              <div class="featured-meta"><span class="mono">03 / MODULE</span><span class="status partial">일부 설계 단계</span></div>
+              <h3>전자기학 3D</h3>
+              <p class="project-lead">보이지 않는 장을 관찰하다.</p>
+              <dl class="facts compact">
+                <div><dt>현재 구현</dt><dd>점전하·쌍극자·직선전류·전류 고리·진공 평면파의 다섯 장면.</dd></div>
+                <div><dt>다음 방향</dt><dd>점·선전하 직접 이동과 grad/div/curl 비교가 가능한 자유 실험실.</dd></div>
+                <div><dt>구분</dt><dd>자유 배치·미분 연산은 설계 단계이며 구현 완료로 표시하지 않습니다.</dd></div>
+              </dl>
+              <p class="module-tag mono kr">정전기 / 벡터장 / WebGL</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap split">
+        <div class="reveal">
+          <p class="label"><span class="mono">04</span>GitHub</p>
+          <h2 id="contact-title">코드와 기록,<br>그리고 다음 질문.</h2>
+          <p class="contact-sub">공개 가능한 결과부터 차근차근 정리합니다.</p>
+        </div>
+        <div class="contact-links reveal">
+          <div class="contact-row">
+            <span class="mono">GitHub</span>
+            <a id="github-link" hidden rel="noopener noreferrer" target="_blank">GitHub 프로필 방문 ↗</a>
+            <span id="github-empty" class="unavailable">공개 주소 준비 중</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span class="mono">VOLT NOTE / ENGINEERING</span>
+      <span class="footer-motto">기록하고, 만들고, 다시 확인합니다.</span>
+      <a href="#home">맨 위로 ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
